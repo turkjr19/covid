@@ -3,6 +3,11 @@ library(jsonlite)
 library(tidyverse)
 library(janitor)
 
+# Project outcomes
+# 1. Pull data from ontario covid api and save as .csv files to use in Tableau.
+# 2. Create a batch file so Windows Task Scheduler can run this script automatically.
+# 2.1 Batch file is saved in this respository.
+
 # text to show when running in scheduler
 cat("Now getting Data..\n")
 

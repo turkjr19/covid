@@ -3,6 +3,7 @@ library(jsonlite)
 library(tidyverse)
 library(janitor)
 
+# text to show when running in scheduler
 cat("Now getting Data..\n")
 
 # api pull for general ontario vaccine data
@@ -38,6 +39,7 @@ age_data <- as.data.frame(age_api$result$records) %>%
          percent_fully_vaccinated = as.numeric(percent_fully_vaccinated)) %>% 
   mutate(Agegroup = str_replace(Agegroup, "Adults_18plus", "18+"))
 
+# text to show when running in scheduler
 cat("Now writing Data..\n")
 
 # Write file to csv
@@ -49,6 +51,7 @@ write.csv(age_data,
           file = "ageGroupOntVaccineData.csv",
           row.names = F)
 
+# text to show when running in scheduler
 cat("done..\n")
 
   

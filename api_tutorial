@@ -1,0 +1,15 @@
+library(tidyverse)
+library(purrr)
+library(janitor)
+library(lubridate)
+library(jsonlite)
+
+
+
+dat_api <- fromJSON("https://api.opencovid.ca/timeseries?stat=cases&loc=3530")
+cases <- dat_api[["cases"]]                   
+View(cases)
+
+vac_api <- fromJSON("https://data.ontario.ca/api/3/action/datastore_search?resource_id=8a89caa9-511c-4568-af89-7f2174b4378c&limit=1000")
+records <- vac_api[["result"]][["records"]]
+View(records)
